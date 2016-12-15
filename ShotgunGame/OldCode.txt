@@ -1,0 +1,226 @@
+﻿ //public void GenerateValue()
+        //{
+        //    Generator generator = new Generator();
+        //    returnValue = generator.generatedValue;
+        //}
+
+        //public int playerBullets { get; set; }
+        //public int playerScore { get; set; }
+
+        //public int cpuBullets { get; set; }
+        //public int cpuScore { get; set; }
+
+        //public int playerMove { get; set; }
+
+        //public void CheckPlayerBullets()
+        //{
+        //    if (playerBullets == 0)
+        //    {
+        //        btn_Shoot.Enabled = false;
+        //        //btn_Shoot.BackColor = Color.Red;
+        //    }
+        //    else if (playerBullets != 0)
+        //    {
+        //        btn_Shoot.Enabled = true;
+        //        //btn_Shoot.BackColor = Color.White;
+        //    }
+        //}
+
+        //public void PlayerBullets(int bullets)
+        //{
+        //    playerBullets = playerBullets + bullets;
+        //    lbl_PlayerBullets.Text = playerBullets.ToString();
+        //    CheckPlayerBullets();
+        //}
+        //public void PlayerScore(int score)
+        //{
+        //    playerScore = playerScore + score;
+        //    lbl_PlayerScore.Text = playerScore.ToString();
+        //}
+
+        //public void CpuBullets(int bullets)
+        //{
+        //    cpuBullets = cpuBullets + bullets;
+        //    lbl_CpuBullets.Text = cpuBullets.ToString();
+        //}
+        //public void CpuScore(int score)
+        //{
+        //    cpuScore = cpuScore + score;
+        //    lbl_CpuScore.Text = cpuScore.ToString();
+        //}
+
+        //public int returnValue { get; set; }
+
+        //public void RegenerateValue()
+        //{
+        //    if (returnValue > 1)
+        //    {
+        //        if (playerMove == 1)
+        //        {
+        //            ShootMove();
+        //        }
+        //        else if (playerMove == 2)
+        //        {
+        //            BlockMove();
+        //        }
+        //        else if (playerMove == 3)
+        //        {
+        //            ReloadMove();
+        //        }
+        //    }
+        //    else if (returnValue == 1)
+        //    {
+        //        RegenerateValue();
+        //    }    
+        //}
+
+        //public void ShootMove()
+        //{
+        //    //Shoot = 1;
+        //    playerMove = 1;
+
+        //    if (returnValue == 1)
+        //    {
+        //        if (cpuBullets == 0)
+        //        {
+        //            RegenerateValue();
+        //        }
+        //        else if (cpuBullets != 0)
+        //        {
+        //            PlayerBullets((-1));
+        //            CpuBullets((-1));
+
+        //            #region BOTH LOSE A BULLET
+        //            lbl_CpuMove.Text = "Shoot";
+        //            lbl_GameResult.Text = "Both lose a bullet";
+        //            #endregion
+        //        }
+        //    }
+        //    else if (returnValue == 2)
+        //    {
+        //        #region PLAYER LOSE A BULLET
+        //        lbl_CpuMove.Text = "Block";
+        //        lbl_GameResult.Text = "You lose a bullet";
+        //        #endregion
+
+        //        PlayerBullets((-1));
+        //    }
+        //    else if (returnValue == 3)
+        //    {
+        //        #region PLAYER WINS + LOSES A BULLET
+        //        lbl_CpuMove.Text = "Reload";
+        //        lbl_GameResult.Text = "You win!";
+        //        #endregion
+
+        //        PlayerBullets(-1);
+        //        PlayerScore(1);
+        //    }
+        //} 
+
+        //public void BlockMove()
+        //{
+        //    //Block = 2;
+        //    playerMove = 2;
+
+        //    if (returnValue == 1)
+        //    {
+        //         if (cpuBullets != 0)
+        //        {                    
+        //            #region CPU LOSES A BULLET
+        //            lbl_CpuMove.Text = "Shoot";
+        //            lbl_GameResult.Text = "Cpu loses a bullet";
+        //            #endregion
+
+        //            CpuBullets((-1));
+        //        }
+        //        else if (cpuBullets == 0)
+        //        {
+        //            RegenerateValue();
+        //        }
+        //    }
+        //    else if (returnValue == 2)
+        //    {
+        //        #region NOTHING HAPPENDS
+        //        lbl_CpuMove.Text = "Block";
+        //        lbl_GameResult.Text = "Nothing happends. It´s a tie";
+        //        #endregion
+        //    }
+        //    else if (returnValue == 3)
+        //    {
+        //        #region CPU GETS A BULLET
+        //        lbl_CpuMove.Text = "Reload";
+        //        lbl_GameResult.Text = "CPU gains a bullet";
+        //        #endregion
+
+        //        CpuBullets(1);
+        //    }
+        //}
+
+        //public void ReloadMove()
+        //{
+        //    //Reload = 3;
+        //    playerMove = 3;
+
+        //    if (returnValue == 1)
+        //    {
+        //        if (cpuBullets == 0)
+        //        {
+        //            RegenerateValue();
+        //        }
+        //        else if (cpuBullets != 0)
+        //        {
+        //            #region PLAYER LOSE + CPU LOSE A BULLET
+        //            lbl_CpuMove.Text = "Shoot";
+        //            lbl_GameResult.Text = "You die and lose!";
+        //            #endregion
+
+        //            CpuBullets(-1);
+        //            CpuScore(1);
+        //        }
+        //    }
+        //    else if (returnValue == 2)
+        //    {
+        //        #region PLAYER GETS A BULLET
+        //        lbl_CpuMove.Text = "Block";
+        //        lbl_GameResult.Text = "You gain a bullet!";
+        //        #endregion
+
+        //        PlayerBullets(1);
+        //    }
+        //    else if (returnValue == 3)
+        //    {
+        //        #region BOTH GETS A BULLET
+        //        lbl_CpuMove.Text = "Reload";
+        //        lbl_GameResult.Text = "Both gains a bullet!";
+        //        #endregion
+
+        //        PlayerBullets(1);
+        //        CpuBullets(1);
+        //    }
+        //}
+
+		
+	//public  class Score : GameLogic
+    //{
+    //    public void PlayerBullets(int bullets)
+    //    {
+    //        playerBullets = playerBullets + bullets;
+    //        //lbl_PlayerBullets.Text = playerBullets.ToString();
+    //        CheckPlayerBullets();
+    //    }
+    //    public  void PlayerScore(int score)
+    //    {
+    //        playerScore = playerScore + score;
+    //        //lbl_PlayerScore.Text = playerScore.ToString();
+    //    }
+
+    //    public  void CpuBullets(int bullets)
+    //    {
+    //        cpuBullets = cpuBullets + bullets;
+    //        //lbl_CpuBullets.Text = cpuBullets.ToString();
+    //    }
+    //    public  void CpuScore(int score)
+    //    {
+    //        cpuScore = cpuScore + score;
+    //        //lbl_CpuScore.Text = cpuScore.ToString();
+    //    }
